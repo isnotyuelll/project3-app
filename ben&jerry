@@ -1,0 +1,8 @@
+import numpy as np
+from scipy import stats
+
+def analyze(data):
+    p_hat = 1 / np.mean(data)
+    params = stats.geom.fit(data, floc=0)
+    p_fitted = params[0]
+    return p_fitted
